@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+          integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="lecture.css">
+
+     <title>Lecture 4 - HTML Structure and Forms | WebLearn</title>
+</head>
+
+<body>
+
+     <!-- Navigation -->
+
+     <nav class="lecture-nav">
+          <a href="../lectures.html">
+               <i class="fa-solid fa-arrow-left"></i>
+               All Lectures
+          </a>
+
+          <h2>
+               <a href="../index.html">
+                    <img src="../images/logo.png" alt="WebLearn Logo">
+               </a>
+          </h2>
+     </nav>
+
+
+     <main class="lecture-container">
+
+          <!-- Lecture Header -->
+
+          <section class="lecture-header">
+               <div class="lecture-info">
+                    <span>LECTURE 04</span>
+
+                    <h1>HTML Structure and Forms</h1>
+
+                    <p>
+                         Learn how to organize webpage content with
+                         semantic elements and collect user information
+                         using HTML forms.
+                    </p>
+               </div>
+
+               <div class="lecture-icon">
+                    <i class="fa-solid fa-rectangle-list"></i>
+               </div>
+          </section>
+
+
+          <!-- Video -->
+
+          <section class="video-section">
+               <div class="video-header">
+                    <h2>Lecture Video</h2>
+
+                    <span>
+                         <i class="fa-solid fa-circle-play"></i>
+                         Watch & Learn
+                    </span>
+               </div>
+
+               <video controls>
+                    <source src="../video/lecture4.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+               </video>
+          </section>
+
+
+          <!-- Content -->
+
+          <section class="lecture-content">
+
+               <h2>About This Lecture</h2>
+
+               <p>
+                    HTML provides different elements to organize webpage
+                    content. Some elements are used for layout, while
+                    others describe the meaning of content. HTML forms
+                    allow users to enter information such as names,
+                    email addresses, messages and preferences.
+               </p>
+
+               <p>
+                    This lecture covers block and inline elements,
+                    semantic HTML, form controls and built-in browser
+                    validation.
+               </p>
+
+
+               <h2>What You'll Learn</h2>
+
+               <div class="learning-cards">
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-layer-group"></i>
+                         <h3>HTML Structure</h3>
+                         <p>Understand block, inline and semantic elements.</p>
+                    </div>
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-rectangle-list"></i>
+                         <h3>HTML Forms</h3>
+                         <p>Collect user input using different controls.</p>
+                    </div>
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-shield-halved"></i>
+                         <h3>Validation</h3>
+                         <p>Check user input with HTML5 attributes.</p>
+                    </div>
+
+               </div>
+
+
+               <!-- Block and Inline -->
+
+               <h2>1. Block-Level and Inline Elements</h2>
+
+               <p>
+                    Block-level elements normally begin on a new line
+                    and take up the available width. Examples include
+                    div, p, h1 and section.
+               </p>
+
+               <p>
+                    Inline elements usually remain within the same line
+                    and take up only the space they need. Examples
+                    include span, a, strong and em.
+               </p>
+
+               <pre><code>&lt;div&gt;
+     This is a block element.
+&lt;/div&gt;
+
+&lt;p&gt;
+     Learn &lt;strong&gt;HTML&lt;/strong&gt; with WebLearn.
+&lt;/p&gt;
+
+&lt;span&gt;This is inline text.&lt;/span&gt;
+&lt;a href="about.html"&gt;About Us&lt;/a&gt;</code></pre>
+
+               <h3>div and span</h3>
+
+               <p>
+                    The div element groups content into a block-level
+                    container. The span element groups a small piece
+                    of inline content. Both are commonly used with CSS.
+               </p>
+
+               <pre><code>&lt;div class="card"&gt;
+     &lt;h2&gt;HTML Course&lt;/h2&gt;
+     &lt;p&gt;Learn the basics of HTML.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;p&gt;Learn &lt;span&gt;HTML&lt;/span&gt; today.&lt;/p&gt;</code></pre>
+
+
+               <!-- Semantic HTML -->
+
+               <h2>2. Semantic HTML Elements</h2>
+
+               <p>
+                    Semantic elements describe the purpose of their
+                    content. They make HTML easier to understand for
+                    developers, browsers and assistive technologies.
+               </p>
+
+               <ul>
+                    <li><strong>header:</strong> Introductory content or a page heading.</li>
+                    <li><strong>nav:</strong> Navigation links.</li>
+                    <li><strong>main:</strong> The main content of the page.</li>
+                    <li><strong>section:</strong> A group of related content.</li>
+                    <li><strong>article:</strong> Independent content, such as a post.</li>
+                    <li><strong>aside:</strong> Related or supplementary content.</li>
+                    <li><strong>footer:</strong> Footer information.</li>
+               </ul>
+
+               <h3>Example of Semantic Layout</h3>
+
+               <pre><code>&lt;header&gt;
+     &lt;h1&gt;My Website&lt;/h1&gt;
+&lt;/header&gt;
+
+&lt;nav&gt;
+     &lt;a href="index.html"&gt;Home&lt;/a&gt;
+     &lt;a href="about.html"&gt;About&lt;/a&gt;
+&lt;/nav&gt;
+
+&lt;main&gt;
+     &lt;section&gt;
+          &lt;h2&gt;Web Development&lt;/h2&gt;
+          &lt;p&gt;Learn how websites are built.&lt;/p&gt;
+     &lt;/section&gt;
+
+     &lt;aside&gt;Related resources&lt;/aside&gt;
+&lt;/main&gt;
+
+&lt;footer&gt;
+     &lt;p&gt;WebLearn&lt;/p&gt;
+&lt;/footer&gt;</code></pre>
+
+               <h3>Accessibility and SEO Benefits</h3>
+
+               <p>
+                    Semantic HTML helps screen readers identify page
+                    sections and makes content easier to navigate.
+                    Search engines can also better understand the
+                    structure and meaning of webpage content. Semantic
+                    elements alone, however, do not guarantee higher
+                    search rankings.
+               </p>
+
+
+               <!-- Forms -->
+
+               <h2>3. HTML Forms</h2>
+
+               <p>
+                    Forms collect information from users. The form
+                    element groups input controls together. Its action
+                    attribute specifies where the form data is sent,
+                    and its method attribute specifies how the data
+                    is submitted.
+               </p>
+
+               <ul>
+                    <li><strong>action:</strong> Specifies the destination for submitted data.</li>
+                    <li><strong>method="get":</strong> Usually sends data as URL parameters.</li>
+                    <li><strong>method="post":</strong> Sends data in the request body.</li>
+               </ul>
+
+               <h3>Input Types</h3>
+
+               <p>
+                    The input element supports different types for
+                    collecting different kinds of information.
+               </p>
+
+               <pre><code>&lt;form action="/submit" method="post"&gt;
+
+     &lt;label for="name"&gt;Full Name:&lt;/label&gt;
+     &lt;input type="text" id="name" name="name"&gt;
+
+     &lt;label for="email"&gt;Email:&lt;/label&gt;
+     &lt;input type="email" id="email" name="email"&gt;
+
+     &lt;label for="password"&gt;Password:&lt;/label&gt;
+     &lt;input type="password" id="password" name="password"&gt;
+
+     &lt;label for="age"&gt;Age:&lt;/label&gt;
+     &lt;input type="number" id="age" name="age"&gt;
+
+     &lt;button type="submit"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+               <p>
+                    Other useful input types include checkbox, radio,
+                    date, file and tel. The name attribute identifies
+                    the field when its value is submitted.
+               </p>
+
+               <h3>Select Dropdown</h3>
+
+               <p>
+                    The select element creates a dropdown list.
+                    Each option represents a choice.
+               </p>
+
+               <pre><code>&lt;label for="course"&gt;Choose a course:&lt;/label&gt;
+
+&lt;select id="course" name="course"&gt;
+     &lt;option value="html"&gt;HTML&lt;/option&gt;
+     &lt;option value="css"&gt;CSS&lt;/option&gt;
+     &lt;option value="web"&gt;Web Development&lt;/option&gt;
+&lt;/select&gt;</code></pre>
+
+               <h3>Textarea</h3>
+
+               <p>
+                    The textarea element allows users to enter longer
+                    text, such as comments, feedback or messages.
+               </p>
+
+               <pre><code>&lt;label for="message"&gt;Your Message:&lt;/label&gt;
+
+&lt;textarea id="message" name="message"
+     rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+
+               <h3>Buttons</h3>
+
+               <p>
+                    Buttons perform actions in a form. A submit button
+                    submits the form, while a reset button restores
+                    form controls to their initial values.
+               </p>
+
+               <pre><code>&lt;button type="submit"&gt;Submit Form&lt;/button&gt;
+&lt;button type="reset"&gt;Clear Form&lt;/button&gt;</code></pre>
+
+
+               <!-- HTML5 Validation -->
+
+               <h2>4. HTML5 Form Validation</h2>
+
+               <p>
+                    HTML5 includes attributes that help browsers check
+                    user input before submitting a form. These checks
+                    improve usability, but server-side validation is
+                    still important.
+               </p>
+
+               <h3>Required Attribute</h3>
+
+               <p>
+                    The required attribute prevents submission when
+                    a required field is empty.
+               </p>
+
+               <pre><code>&lt;input type="text" name="username" required&gt;</code></pre>
+
+               <h3>Pattern Attribute</h3>
+
+               <p>
+                    The pattern attribute checks whether text matches
+                    a specified regular expression. Here, the username
+                    must contain 4 to 12 letters or digits.
+               </p>
+
+               <pre><code>&lt;input type="text" name="username"
+     pattern="[A-Za-z0-9]{4,12}"
+     required&gt;</code></pre>
+
+               <h3>Min and Max</h3>
+
+               <p>
+                    The min and max attributes define the allowed
+                    range for number and date controls.
+               </p>
+
+               <pre><code>&lt;label for="age"&gt;Age:&lt;/label&gt;
+
+&lt;input type="number" id="age" name="age"
+     min="18" max="60" required&gt;</code></pre>
+
+               <h3>Complete Form Example</h3>
+
+               <p>
+                    The following example combines labels, different
+                    input types and validation attributes.
+               </p>
+
+               <pre><code>&lt;form action="/register" method="post"&gt;
+
+     &lt;label for="username"&gt;Username:&lt;/label&gt;
+     &lt;input type="text" id="username"
+          name="username" required
+          pattern="[A-Za-z0-9]{4,12}"&gt;
+
+     &lt;label for="email"&gt;Email:&lt;/label&gt;
+     &lt;input type="email" id="email"
+          name="email" required&gt;
+
+     &lt;label for="age"&gt;Age:&lt;/label&gt;
+     &lt;input type="number" id="age"
+          name="age" min="18" max="60"&gt;
+
+     &lt;button type="submit"&gt;Register&lt;/button&gt;
+
+&lt;/form&gt;</code></pre>
+
+               <p>
+                    Note that the example demonstrates HTML structure
+                    only. The form needs a suitable server endpoint
+                    to process submitted information.
+               </p>
+
+
+               <!-- Key Point -->
+
+               <div class="important-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <div>
+                         <h3>Key Point</h3>
+
+                         <p>
+                              Use semantic elements to organize content
+                              and accessible labels to describe form
+                              controls. HTML validation improves the
+                              user experience, but it does not replace
+                              server-side validation.
+                         </p>
+                    </div>
+               </div>
+
+          </section>
+
+
+          <!-- Bottom Navigation -->
+
+          <nav class="lecture-footer">
+               <a href="lecture3.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="lecture5.html">Next Lecture <i class="fa-solid fa-arrow-right"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+
+</html>

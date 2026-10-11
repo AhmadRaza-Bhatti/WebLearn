@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lecture 6: Box Model, Display and Positioning | WebLearn</title>
+
+     <link rel="stylesheet" href="lecture1.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+     <nav class="lecture-nav">
+          <a href="../lectures.html"><i class="fa-solid fa-arrow-left"></i> All Lectures</a>
+          <a href="../index.html"><img src="../images/logo.png" alt="WebLearn Logo"></a>
+     </nav>
+
+     <main class="lecture-container">
+
+          <header class="lecture-header">
+               <div class="lecture-info">
+                    <span>LECTURE 06 • CSS</span>
+                    <h1>Box Model, Display and Positioning</h1>
+                    <p>Understand how elements are sized, displayed, styled, and positioned on a web page.</p>
+               </div>
+               <div class="lecture-icon">
+                    <i class="fa-solid fa-cubes"></i>
+               </div>
+          </header>
+
+          <section class="video-section">
+               <div class="video-header">
+                    <h2><i class="fa-solid fa-circle-play"></i> Lecture Video</h2>
+                    <span>Lecture 06</span>
+               </div>
+               <video controls>
+                    <source src="../video/lecture6.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+               </video>
+          </section>
+
+          <article class="lecture-content">
+
+               <h2>1. Introduction to the CSS Box Model</h2>
+               <p>In CSS, every element is treated as a rectangular box. The box model explains how the content, padding, border, and margin determine the space occupied by an element.</p>
+
+               <div class="learning-cards">
+                    <div class="learning-card">
+                         <i class="fa-solid fa-file-lines"></i>
+                         <h3>Content</h3>
+                         <p>The actual text, image, or other content inside the element.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-border-all"></i>
+                         <h3>Padding and Border</h3>
+                         <p>Padding creates inner space; the border surrounds the box.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-arrows-left-right"></i>
+                         <h3>Margin</h3>
+                         <p>Creates space outside the element's border.</p>
+                    </div>
+               </div>
+
+               <h2>2. Content, Padding, Border, and Margin</h2>
+
+               <h3>Content</h3>
+               <p>The content area contains the element's text, image, or other content. The width and height properties normally control this area when using the default content-box sizing.</p>
+
+               <h3>Padding</h3>
+               <p>Padding is the space between the content and the border. It helps prevent content from touching the edges of a box.</p>
+               <pre><code>.card {
+     padding: 20px;
+}</code></pre>
+
+               <h3>Border</h3>
+               <p>The border surrounds the padding and content. You can change its width, style, and colour.</p>
+               <pre><code>.card {
+     border: 2px solid green;
+}</code></pre>
+
+               <h3>Margin</h3>
+               <p>Margin creates space outside the border and helps separate neighbouring elements.</p>
+               <pre><code>.card {
+     margin: 20px;
+}</code></pre>
+
+               <p>You can set different values for each side:</p>
+               <pre><code>.card {
+     margin-top: 10px;
+     margin-right: 15px;
+     margin-bottom: 20px;
+     margin-left: 15px;
+}</code></pre>
+
+               <h2>3. Understanding Total Element Size</h2>
+               <p>By default, CSS uses box-sizing: content-box. In this mode, the declared width applies only to the content. Padding and borders are added to the total width.</p>
+
+               <pre><code>.box {
+     width: 200px;
+     padding: 20px;
+     border: 5px solid green;
+}</code></pre>
+
+               <p>The total width is 250 pixels: 200 pixels of content, 40 pixels of horizontal padding, and 10 pixels of borders.</p>
+
+               <h3>Box-sizing: border-box</h3>
+               <p>With border-box, the declared width includes the content, padding, and border. This often makes layouts easier to manage.</p>
+
+               <pre><code>* {
+     box-sizing: border-box;
+}
+
+.box {
+     width: 200px;
+     padding: 20px;
+     border: 5px solid green;
+}</code></pre>
+
+               <p>The entire box stays 200 pixels wide, and the available content area becomes smaller to accommodate padding and borders.</p>
+
+               <h2>4. Margin Collapsing</h2>
+               <p>In certain vertical block-layout situations, adjacent vertical margins collapse into one margin rather than adding together. For example, a bottom margin of 20 pixels and a neighbouring top margin of 30 pixels may produce a 30-pixel gap, not 50 pixels.</p>
+               <pre><code>.first {
+     margin-bottom: 20px;
+}
+
+.second {
+     margin-top: 30px;
+}</code></pre>
+               <p>Margin collapsing does not happen in every layout. For example, flex and grid layouts handle item spacing differently.</p>
+
+               <h2>5. Width, Height, and Overflow</h2>
+               <p>The width and height properties set an element's dimensions. Maximum and minimum dimensions help control how large or small it can become.</p>
+
+               <pre><code>.content-box {
+     width: 80%;
+     min-height: 150px;
+     max-width: 700px;
+}</code></pre>
+
+               <p>The overflow property determines what happens when content does not fit inside its box.</p>
+               <pre><code>.example {
+     width: 250px;
+     height: 100px;
+     overflow: auto;
+}</code></pre>
+
+               <ul>
+                    <li><strong>visible:</strong> Content may extend outside the box.</li>
+                    <li><strong>hidden:</strong> Extra content is clipped.</li>
+                    <li><strong>scroll:</strong> Scrollbars are provided for scrolling.</li>
+                    <li><strong>auto:</strong> Scrollbars appear when needed.</li>
+               </ul>
+
+               <h2>6. The Display Property</h2>
+               <p>The display property controls how an element participates in page layout.</p>
+
+               <h3>Block</h3>
+               <p>A block element normally starts on a new line and takes the available width by default.</p>
+               <pre><code>div {
+     display: block;
+}</code></pre>
+
+               <h3>Inline</h3>
+               <p>An inline element flows within a line of text. Width and height generally do not control its layout in the same way as block elements.</p>
+               <pre><code>span {
+     display: inline;
+}</code></pre>
+
+               <h3>Inline-block</h3>
+               <p>Inline-block elements flow alongside other content but allow width and height to be set.</p>
+               <pre><code>.button {
+     display: inline-block;
+     width: 120px;
+     padding: 10px;
+}</code></pre>
+
+               <h3>None</h3>
+               <p>Display none removes the element from the layout, so it takes up no space.</p>
+               <pre><code>.hidden {
+     display: none;
+}</code></pre>
+
+               <h2>7. Borders and Visual Effects</h2>
+
+               <h3>Border and Border Radius</h3>
+               <p>The border property adds an outline around an element. Border-radius rounds its corners.</p>
+               <pre><code>.card {
+     border: 1px solid #dcebe3;
+     border-radius: 12px;
+}</code></pre>
+
+               <h3>Box Shadow</h3>
+               <p>Box-shadow adds a shadow around an element to create depth.</p>
+               <pre><code>.card {
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}</code></pre>
+
+               <h3>Opacity</h3>
+               <p>Opacity controls the transparency of an element and its contents. A value of 1 is fully opaque, while 0 is fully transparent.</p>
+               <pre><code>.image {
+     opacity: 0.7;
+}</code></pre>
+
+               <h3>Transition</h3>
+               <p>A transition makes a change in a CSS property happen smoothly when the property changes.</p>
+               <pre><code>.card {
+     transition: transform 0.3s ease;
+}
+
+.card:hover {
+     transform: translateY(-5px);
+}</code></pre>
+
+               <h2>8. CSS Positioning</h2>
+               <p>The position property controls how an element is placed. The top, right, bottom, and left properties can adjust its position for applicable position values.</p>
+
+               <h3>Static</h3>
+               <p>Static is the default position. The element stays in normal document flow, and offset properties do not move it.</p>
+               <pre><code>.box {
+     position: static;
+}</code></pre>
+
+               <h3>Relative</h3>
+               <p>Relative positioning moves an element from its normal position. Its original space remains reserved.</p>
+               <pre><code>.box {
+     position: relative;
+     top: 10px;
+     left: 15px;
+}</code></pre>
+
+               <h3>Absolute</h3>
+               <p>An absolutely positioned element is removed from normal flow and positioned relative to its containing block, often the nearest positioned ancestor.</p>
+               <pre><code>.parent {
+     position: relative;
+}
+
+.child {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+}</code></pre>
+
+               <h3>Fixed</h3>
+               <p>A fixed element is usually positioned relative to the viewport and stays in place while the page scrolls.</p>
+               <pre><code>.back-to-top {
+     position: fixed;
+     right: 20px;
+     bottom: 20px;
+}</code></pre>
+
+               <h3>Sticky</h3>
+               <p>A sticky element behaves like a normal-flow element until it reaches a specified scrolling position, then sticks within its scrolling container.</p>
+               <pre><code>.navbar {
+     position: sticky;
+     top: 0;
+}</code></pre>
+
+               <h3>Z-index</h3>
+               <p>The z-index property helps control the stacking order of positioned elements and items in relevant layout contexts. A higher value does not always appear above everything because stacking contexts can affect the result.</p>
+               <pre><code>.popup {
+     position: relative;
+     z-index: 10;
+}</code></pre>
+
+               <h2>9. Complete Box Model Example</h2>
+               <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;title&gt;Box Model Example&lt;/title&gt;
+     &lt;style&gt;
+          * {
+               box-sizing: border-box;
+          }
+
+          body {
+               font-family: Arial, sans-serif;
+               background-color: #f6faf8;
+          }
+
+          .card {
+               width: 300px;
+               margin: 30px auto;
+               padding: 20px;
+               background-color: white;
+               border: 2px solid #2e7d5b;
+               border-radius: 12px;
+               box-shadow: 0 4px 10px #cccccc;
+               transition: transform 0.3s;
+          }
+
+          .card:hover {
+               transform: translateY(-5px);
+          }
+     &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div class="card"&gt;
+          &lt;h2&gt;CSS Box Model&lt;/h2&gt;
+          &lt;p&gt;Padding, border, and margin control spacing.&lt;/p&gt;
+     &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+               <div class="important-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                         <h3>Key Point</h3>
+                         <p>Remember the box model order: content, padding, border, and margin. Use border-box for predictable sizing, understand display values, and choose positioning based on the layout you need.</p>
+                    </div>
+               </div>
+
+          </article>
+
+          <nav class="lecture-footer">
+               <a href="lecture5.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="lecture7.html">Next Lecture <i class="fa-solid fa-arrow-right"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+</html>

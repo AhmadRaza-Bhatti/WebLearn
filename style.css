@@ -1,0 +1,296 @@
+* {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+
+body {
+     font-family: "Poppins", sans-serif;
+     background-color: #f6faf8;
+     color: #334155;
+}
+
+
+/* Navbar */
+
+nav {
+     height: 75px;
+     background-color: #ffffff;
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     padding: 0 40px;
+     border-bottom: 1px solid #dcebe3;
+}
+
+.logo img {
+     width: 67px;
+    margin-top: -19px;
+}
+
+.account {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+}
+
+.account img {
+     width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    object-fit: contain;
+    border: 2px solid #dcebe3;
+}
+
+.account h3 a {
+     margin: 0;
+     color: #334155;
+     font-size: 18px;
+     font-weight: 600;
+     text-decoration: none;
+}
+
+
+/* Main Layout */
+
+.container {
+     display: flex;
+     max-width: 100%;
+     padding: 0;
+     min-height: calc(100vh - 75px);
+}
+
+
+/* Sidebar */
+
+.left {
+     width: 235px;
+     background-color: #ffffff;
+     border-right: 1px solid #dcebe3;
+     padding: 30px 15px;
+}
+
+.left a {
+     display: flex;
+     align-items: center;
+     gap: 14px;
+     text-decoration: none;
+     color: #64748b;
+     padding: 13px 18px;
+     margin-bottom: 8px;
+     border-radius: 8px;
+     transition: 0.3s;
+}
+
+.left a i {
+     width: 20px;
+     font-size: 17px;
+}
+
+.left a h3 {
+     margin: 0;
+     font-size: 14px;
+     font-weight: 500;
+}
+
+.left a:hover {
+     background-color: #e8f5ee;
+     color: #2e7d5b;
+}
+
+.left a.active {
+     background-color: #e0f2e9;
+     color: #2e7d5b;
+}
+
+
+/* Main Content */
+
+.main {
+     flex: 1;
+     padding: 55px 65px;
+}
+
+
+/* Welcome Section */
+
+.welcome {
+     background-color: #ffffff;
+     padding: 40px;
+     border-radius: 14px;
+     border: 1px solid #dcebe3;
+     box-shadow: 0 5px 20px rgba(40, 90, 65, 0.06);
+}
+
+.welcome h1 {
+     color: #1f4d3b;
+     font-size: 34px;
+     font-weight: 700;
+     margin-bottom: 8px;
+}
+
+.welcome h2 {
+     color: #2e7d5b;
+     font-size: 20px;
+     font-weight: 500;
+     margin-bottom: 15px;
+}
+
+.welcome p {
+     max-width: 650px;
+     color: #64748b;
+     font-size: 15px;
+     line-height: 1.8;
+     margin-bottom: 25px;
+}
+
+
+/* Button */
+
+.welcome button {
+     background-color: #2e7d5b;
+     color: white;
+     border: none;
+     padding: 11px 20px;
+     border-radius: 7px;
+     font-family: inherit;
+     font-size: 14px;
+     cursor: pointer;
+     transition: 0.3s;
+}
+
+.welcome button i {
+     margin-left: 7px;
+}
+
+.welcome button:hover {
+     background-color: #246647;
+}
+
+
+/* Course Section */
+
+.contents {
+     margin-top: 40px;
+}
+
+.contents > h3 {
+     color: #1f4d3b;
+     font-size: 24px;
+     font-weight: 600;
+     margin-bottom: 7px;
+}
+
+.course-text {
+     color: #64748b;
+     font-size: 14px;
+     margin-bottom: 22px;
+}
+
+
+/* Cards */
+
+.card-container {
+     display: flex;
+     gap: 20px;
+}
+
+.cards {
+     background-color: #ffffff;
+     border: 1px solid #dcebe3;
+     border-radius: 12px;
+     padding: 25px;
+     flex: 1;
+     min-height: 170px;
+     box-shadow: 0 4px 15px rgba(40, 90, 65, 0.05);
+     transition: 0.3s;
+     text-decoration: none;
+}
+
+.cards:hover {
+     transform: translateY(-4px);
+     box-shadow: 0 8px 22px rgba(40, 90, 65, 0.10);
+}
+
+.cards i {
+     font-size: 32px;
+     color: #2e7d5b;
+     margin-bottom: 15px;
+}
+
+.cards h4 {
+     color: #1f4d3b;
+     font-size: 18px;
+     margin-bottom: 8px;
+}
+
+.cards p {
+     color: #64748b;
+     font-size: 13px;
+     line-height: 1.6;
+}
+
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+     nav {
+          padding: 0 20px;
+     }
+
+     .logo img {
+          width: 125px;
+     }
+
+     .account h3 {
+          display: none;
+     }
+
+     .container {
+          flex-direction: column;
+     }
+
+     .left {
+          width: 100%;
+          display: flex;
+          justify-content: center;
+          gap: 5px;
+          padding: 12px;
+          border-right: none;
+          border-bottom: 1px solid #dcebe3;
+     }
+
+     .left a {
+          margin: 0;
+          padding: 10px 15px;
+     }
+
+     .left a h3 {
+          display: none;
+     }
+
+     .main {
+          padding: 30px 20px;
+     }
+
+     .welcome {
+          padding: 25px;
+     }
+
+     .welcome h1 {
+          font-size: 27px;
+     }
+
+     .welcome h2 {
+          font-size: 18px;
+     }
+
+     .card-container {
+          flex-direction: column;
+     }
+
+     .cards {
+          min-height: auto;
+     }
+}

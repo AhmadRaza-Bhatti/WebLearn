@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lecture 8: CSS3 Features | WebLearn</title>
+
+     <link rel="stylesheet" href="lecture1.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+     <nav class="lecture-nav">
+          <a href="../lectures.html"><i class="fa-solid fa-arrow-left"></i> All Lectures</a>
+          <a href="../index.html"><img src="../images/logo.png" alt="WebLearn Logo"></a>
+     </nav>
+
+     <main class="lecture-container">
+
+          <header class="lecture-header">
+               <div class="lecture-info">
+                    <span>LECTURE 08 • CSS</span>
+                    <h1>CSS3 Features</h1>
+                    <p>Explore modern CSS effects, transforms, transitions, animations, custom properties, and
+                         responsive design.</p>
+               </div>
+               <div class="lecture-icon">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+               </div>
+          </header>
+
+          <section class="video-section">
+               <div class="video-header">
+                    <h2><i class="fa-solid fa-circle-play"></i> Lecture Video</h2>
+                    <span>Lecture 08</span>
+               </div>
+               <video controls>
+                    <source src="../video/lecture8.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+               </video>
+          </section>
+
+          <article class="lecture-content">
+
+               <h2>1. Introduction to Modern CSS</h2>
+               <p>CSS has developed many features that allow developers to create modern, responsive, and attractive
+                    websites without using images for every visual effect. These features include rounded corners,
+                    gradients, shadows, transformations, transitions, animations, custom properties, and media queries.
+               </p>
+               <p>They help improve the appearance and usability of a website while keeping its structure in HTML.</p>
+
+               <div class="learning-cards">
+                    <div class="learning-card">
+                         <i class="fa-solid fa-palette"></i>
+                         <h3>Visual Effects</h3>
+                         <p>Create gradients, rounded corners, shadows, and transparency.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-film"></i>
+                         <h3>Motion</h3>
+                         <p>Use transforms, transitions, and keyframe animations.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-mobile-screen"></i>
+                         <h3>Responsive Design</h3>
+                         <p>Adapt layouts to different screens and device sizes.</p>
+                    </div>
+               </div>
+
+               <h2>2. Rounded Corners</h2>
+               <p>The border-radius property creates rounded corners on an element. It can be applied to cards, buttons,
+                    images, and other components.</p>
+
+               <pre><code>.card {
+     background-color: white;
+     border: 1px solid #dcebe3;
+     border-radius: 12px;
+     padding: 20px;
+}</code></pre>
+
+               <p>You can also create a circular element by using a 50% border radius when its width and height are
+                    equal.</p>
+               <pre><code>.profile-image {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     object-fit: cover;
+}</code></pre>
+
+               <h2>3. Gradients</h2>
+               <p>A gradient smoothly blends two or more colours. Gradients can be used as backgrounds for headings,
+                    buttons, cards, and large sections.</p>
+
+               <h3>Linear Gradient</h3>
+               <p>A linear gradient blends colours along a straight line.</p>
+               <pre><code>.banner {
+     background: linear-gradient(
+          135deg,
+          #1f4d3b,
+          #2e7d5b
+     );
+     color: white;
+     padding: 30px;
+}</code></pre>
+
+               <h3>Radial Gradient</h3>
+               <p>A radial gradient spreads colours outward from a central point.</p>
+               <pre><code>.box {
+     background: radial-gradient(
+          circle,
+          #e8f5ee,
+          #2e7d5b
+     );
+}</code></pre>
+
+               <h2>4. Shadows and Opacity</h2>
+
+               <h3>Box Shadow</h3>
+               <p>The box-shadow property adds a shadow around an element, making cards and other components appear
+                    raised.</p>
+               <pre><code>.card {
+     box-shadow: 0 5px 15px rgba(31, 77, 59, 0.12);
+}</code></pre>
+
+               <h3>Text Shadow</h3>
+               <p>The text-shadow property adds a shadow to text.</p>
+               <pre><code>h1 {
+     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}</code></pre>
+
+               <h3>Opacity</h3>
+               <p>The opacity property controls the transparency of an element and its contents. A value of 1 means
+                    fully opaque, while 0 means fully transparent.</p>
+               <pre><code>.image {
+     opacity: 0.7;
+}</code></pre>
+               <p>Remember that opacity affects the entire element, including its children. If you only want a
+                    transparent background, use a colour format with an alpha channel instead.</p>
+
+               <h2>5. CSS Transforms</h2>
+               <p>The transform property changes an element's visual position, size, rotation, or shape without changing
+                    the normal flow of surrounding elements.</p>
+
+               <h3>2D Transforms</h3>
+               <p>Two-dimensional transforms work along the horizontal and vertical axes.</p>
+               <pre><code>.card:hover {
+     transform: translateY(-5px);
+}
+
+.image {
+     transform: scale(1.05);
+}
+
+.icon {
+     transform: rotate(15deg);
+}</code></pre>
+
+               <ul>
+                    <li><strong>translate():</strong> Moves an element.</li>
+                    <li><strong>scale():</strong> Increases or decreases its visual size.</li>
+                    <li><strong>rotate():</strong> Rotates the element.</li>
+                    <li><strong>skew():</strong> Slants the element.</li>
+               </ul>
+
+               <h3>3D Transforms</h3>
+               <p>Three-dimensional transforms add depth and allow rotation along the X, Y, and Z axes.</p>
+               <pre><code>.card {
+     transform: perspective(600px) rotateY(15deg);
+}</code></pre>
+               <p>Use 3D effects carefully so that content remains readable and comfortable to view.</p>
+
+               <h2>6. CSS Transitions</h2>
+               <p>A transition gradually changes a CSS property when its value changes. Transitions are commonly used
+                    for hover effects on buttons, cards, and links.</p>
+
+               <pre><code>.button {
+     background-color: #2e7d5b;
+     color: white;
+     padding: 12px 20px;
+     border-radius: 8px;
+     transition: background-color 0.3s ease,
+                 transform 0.3s ease;
+}
+
+.button:hover {
+     background-color: #1f4d3b;
+     transform: translateY(-3px);
+}</code></pre>
+
+               <p>The transition property can specify the property being animated, the duration, the timing function,
+                    and an optional delay. Avoid applying transitions to every property unnecessarily.</p>
+
+               <h2>7. CSS Keyframe Animations</h2>
+               <p>Animations allow an element to change styles through a sequence of keyframes. Unlike a simple hover
+                    transition, an animation can run automatically and include multiple stages.</p>
+
+               <pre><code>@keyframes moveUp {
+     from {
+          transform: translateY(10px);
+          opacity: 0;
+     }
+
+     to {
+          transform: translateY(0);
+          opacity: 1;
+     }
+}
+
+.card {
+     animation: moveUp 0.6s ease;
+}</code></pre>
+
+               <p>The @keyframes rule defines the animation stages. The animation property sets the animation name,
+                    duration, and timing function.</p>
+
+               <p>You can define intermediate stages using percentages:</p>
+               <pre><code>@keyframes changeColor {
+     0% {
+          background-color: #e8f5ee;
+     }
+
+     50% {
+          background-color: #b7dfc8;
+     }
+
+     100% {
+          background-color: #2e7d5b;
+     }
+}</code></pre>
+
+               <p>Keep motion subtle. Users who prefer reduced motion should be considered when adding non-essential
+                    animation.</p>
+
+               <h2>8. Web Fonts and Icon Fonts</h2>
+
+               <h3>Web Fonts</h3>
+               <p>Web fonts let a website use a specific font instead of relying only on fonts installed on the user's
+                    device. They can be loaded from a font service or hosted with the website.</p>
+               <pre><code>&lt;link href="https://fonts.googleapis.com/css2?family=Poppins&amp;display=swap"
+      rel="stylesheet"&gt;</code></pre>
+
+               <pre><code>body {
+     font-family: "Poppins", Arial, sans-serif;
+}</code></pre>
+
+               <h3>Icon Fonts</h3>
+               <p>Icon fonts provide icons through font glyphs or an icon library. In this website, Font Awesome
+                    supplies icons for navigation, lecture cards, and headings.</p>
+               <pre><code>&lt;i class="fa-solid fa-book"&gt;&lt;/i&gt;
+&lt;i class="fa-solid fa-circle-play"&gt;&lt;/i&gt;</code></pre>
+               <p>Use meaningful alternative text or accessible labels when an icon communicates important information.
+                    Decorative icons should not create unnecessary screen-reader noise.</p>
+
+               <h2>9. CSS Custom Properties (Variables)</h2>
+               <p>CSS custom properties store reusable values such as colours, spacing, and border radius. They are
+                    often defined in the root selector so they can be used throughout a stylesheet.</p>
+
+               <pre><code>:root {
+     --main-green: #2e7d5b;
+     --dark-green: #1f4d3b;
+     --light-green: #e8f5ee;
+     --card-radius: 12px;
+}
+
+.button {
+     background-color: var(--main-green);
+     border-radius: var(--card-radius);
+}
+
+.heading {
+     color: var(--dark-green);
+}</code></pre>
+
+               <p>If you want to change the main green colour across a website, you can update the variable once instead
+                    of editing many separate rules.</p>
+
+               <h2>10. Responsive Design and Media Queries</h2>
+               <p>Responsive design allows a website to adapt to different screen sizes. Media queries apply CSS rules
+                    only when specified conditions are met, such as a maximum viewport width.</p>
+
+               <pre><code>.container {
+     width: 80%;
+     margin: auto;
+}
+
+@media (max-width: 700px) {
+     .container {
+          width: 95%;
+     }
+
+     h1 {
+          font-size: 24px;
+     }
+}</code></pre>
+
+               <p>In this example, the container becomes wider relative to the screen and the heading becomes smaller on
+                    narrow screens.</p>
+
+               <h3>Feature Queries</h3>
+               <p>Feature queries check whether a browser supports a particular CSS feature. The @supports rule can
+                    provide a fallback for unsupported features.</p>
+               <pre><code>.card {
+     background-color: white;
+}
+
+@supports (backdrop-filter: blur(10px)) {
+     .glass-card {
+          backdrop-filter: blur(10px);
+     }
+}</code></pre>
+
+               <h2>11. Vendor Prefixes and Cross-Browser Compatibility</h2>
+               <p>Different browsers may support new CSS features at different times. Vendor prefixes were historically
+                    used for experimental or browser-specific implementations.</p>
+
+               <pre><code>.example {
+     -webkit-transform: rotate(5deg);
+     transform: rotate(5deg);
+}</code></pre>
+
+               <p>The unprefixed standard property should normally be included. Do not add prefixes to every property
+                    automatically. Check current browser support and use an appropriate build tool or compatibility
+                    reference when a feature needs special handling.</p>
+
+               <p>Cross-browser compatibility means ensuring a website works consistently across supported browsers and
+                    devices. Test responsive layouts, fonts, images, and important interactions in more than one browser
+                    when possible.</p>
+
+               <h2>12. Complete CSS3 Example</h2>
+               <p>This example combines custom properties, gradients, shadows, transitions, transforms, and responsive
+                    design.</p>
+
+               <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+     &lt;title&gt;Modern CSS Example&lt;/title&gt;
+     &lt;style&gt;
+          :root {
+               --green: #2e7d5b;
+               --dark-green: #1f4d3b;
+               --light-green: #e8f5ee;
+          }
+
+          body {
+               font-family: Arial, sans-serif;
+               background-color: #f6faf8;
+               padding: 30px;
+          }
+
+          .card {
+               max-width: 400px;
+               margin: auto;
+               padding: 25px;
+               color: var(--dark-green);
+               background: linear-gradient(
+                    135deg,
+                    white,
+                    var(--light-green)
+               );
+               border-radius: 15px;
+               box-shadow: 0 5px 15px rgba(31, 77, 59, 0.12);
+               transition: transform 0.3s ease;
+          }
+
+          .card:hover {
+               transform: translateY(-5px);
+          }
+
+          .button {
+               display: inline-block;
+               padding: 10px 18px;
+               color: white;
+               background-color: var(--green);
+               border-radius: 8px;
+               text-decoration: none;
+          }
+
+          @media (max-width: 600px) {
+               body {
+                    padding: 15px;
+               }
+
+               .card {
+                    padding: 18px;
+               }
+          }
+     &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div class="card"&gt;
+          &lt;h1&gt;Modern CSS&lt;/h1&gt;
+          &lt;p&gt;Build attractive and responsive web pages.&lt;/p&gt;
+          &lt;a href="#" class="button"&gt;Learn More&lt;/a&gt;
+     &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+               <div class="important-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                         <h3>Key Point</h3>
+                         <p>Modern CSS offers visual effects, motion, reusable custom properties, and responsive
+                              layouts. Use these features thoughtfully, test browser compatibility, and keep
+                              accessibility and reduced-motion preferences in mind.</p>
+                    </div>
+               </div>
+
+          </article>
+
+          <nav class="lecture-footer">
+               <a href="lecture7.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="../index.html">Back to Home <i class="fa-solid fa-house"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+
+</html>

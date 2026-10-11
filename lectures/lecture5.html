@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lecture 5: CSS Fundamentals | WebLearn</title>
+
+     <link rel="stylesheet" href="lecture1.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+     <nav class="lecture-nav">
+          <a href="../lectures.html"> <i class="fa-solid fa-arrow-left"></i> All Lectures</a>
+          <a href="../index.html"><img src="../images/logo.png" alt="WebLearn Logo"></a>
+     </nav>
+
+     <main class="lecture-container">
+
+          <header class="lecture-header">
+               <div class="lecture-info">
+                    <span>LECTURE 05 • CSS</span>
+                    <h1>CSS Fundamentals</h1>
+                    <p>Learn how to write CSS, select HTML elements, control styles, and create attractive web pages.
+                    </p>
+               </div>
+               <div class="lecture-icon">
+                    <i class="fa-brands fa-css3-alt"></i>
+               </div>
+          </header>
+
+          <section class="video-section">
+               <div class="video-header">
+                    <h2><i class="fa-solid fa-circle-play"></i> Lecture Video</h2>
+                    <span>Lecture 05</span>
+               </div>
+               <video controls>
+                    <source src="../video/lecture5.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+               </video>
+          </section>
+
+          <article class="lecture-content">
+
+               <h2>1. Introduction to CSS</h2>
+               <p>CSS stands for Cascading Style Sheets. It is used to control the appearance and layout of HTML
+                    elements. HTML provides the structure of a web page, while CSS makes that page attractive by adding
+                    colours, spacing, fonts, borders, and layouts.</p>
+               <p>For example, HTML creates a heading, but CSS can change its colour, size, alignment, and background.
+               </p>
+
+               <div class="learning-cards">
+                    <div class="learning-card">
+                         <i class="fa-brands fa-html5"></i>
+                         <h3>HTML</h3>
+                         <p>Creates the structure and content of a web page.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-brands fa-css3-alt"></i>
+                         <h3>CSS</h3>
+                         <p>Controls colours, fonts, spacing, and page layout.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-palette"></i>
+                         <h3>Design</h3>
+                         <p>Makes websites clear, attractive, and user-friendly.</p>
+                    </div>
+               </div>
+
+               <h2>2. CSS Syntax</h2>
+               <p>A CSS rule contains a selector and a declaration block. The selector identifies which HTML element
+                    should be styled. Each declaration contains a property and a value.</p>
+
+               <pre><code>h1 {
+     color: green;
+     font-size: 30px;
+}</code></pre>
+
+               <ul>
+                    <li><strong>h1:</strong> The selector that targets heading elements.</li>
+                    <li><strong>color:</strong> The property that controls text colour.</li>
+                    <li><strong>green:</strong> The value assigned to the colour property.</li>
+                    <li><strong>font-size:</strong> The property that controls text size.</li>
+               </ul>
+
+               <h2>3. Three Ways to Add CSS</h2>
+
+               <h3>Inline CSS</h3>
+               <p>Inline CSS is written directly inside an HTML element using the style attribute. It affects that
+                    particular element.</p>
+
+               <pre><code>&lt;h1 style="color: green;"&gt;Welcome&lt;/h1&gt;</code></pre>
+
+               <h3>Internal CSS</h3>
+               <p>Internal CSS is written inside a style element in the head section of an HTML document. It is useful
+                    when styling a single page.</p>
+
+               <pre><code>&lt;head&gt;
+     &lt;style&gt;
+          p {
+               color: blue;
+               font-size: 18px;
+          }
+     &lt;/style&gt;
+&lt;/head&gt;</code></pre>
+
+               <h3>External CSS</h3>
+               <p>External CSS is written in a separate .css file and connected to HTML using the link element. It is
+                    usually the best choice for a website with multiple pages because the same stylesheet can be reused.
+               </p>
+
+               <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+
+               <p>For example, the CSS rules are saved in style.css:</p>
+
+               <pre><code>body {
+     background-color: #f6faf8;
+     font-family: Arial, sans-serif;
+}</code></pre>
+
+               <h2>4. CSS Selectors</h2>
+               <p>Selectors are used to choose the HTML elements that we want to style.</p>
+
+               <h3>Element Selector</h3>
+               <p>Selects all elements of a particular type.</p>
+               <pre><code>p {
+     color: gray;
+}</code></pre>
+
+               <h3>Class Selector</h3>
+               <p>A class can be applied to multiple HTML elements. In CSS, a class selector starts with a dot.</p>
+               <pre><code>.card {
+     background-color: white;
+     padding: 20px;
+}</code></pre>
+               <pre><code>&lt;div class="card"&gt;First Card&lt;/div&gt;
+&lt;div class="card"&gt;Second Card&lt;/div&gt;</code></pre>
+
+               <h3>ID Selector</h3>
+               <p>An ID identifies a particular element in a page. An ID selector starts with the # symbol.</p>
+               <pre><code>#main-title {
+     color: darkgreen;
+}</code></pre>
+
+               <h3>Attribute Selector</h3>
+               <p>An attribute selector targets elements based on their attributes or attribute values.</p>
+               <pre><code>input[type="text"] {
+     border: 1px solid green;
+}</code></pre>
+
+               <h3>Grouping Selector</h3>
+               <p>A grouping selector applies the same styles to multiple selectors.</p>
+               <pre><code>h1, h2, p {
+     font-family: Arial, sans-serif;
+}</code></pre>
+
+               <h3>Descendant Selector</h3>
+               <p>A descendant selector targets elements located inside another element, even when they are nested more
+                    deeply.</p>
+               <pre><code>.card p {
+     color: gray;
+}</code></pre>
+               <p>This rule selects paragraph elements inside an element with the class card.</p>
+
+               <h2>5. Pseudo-classes and Pseudo-elements</h2>
+
+               <h3>Pseudo-classes</h3>
+               <p>A pseudo-class styles an element when it is in a particular state or position. It uses a single colon.
+               </p>
+               <pre><code>a:hover {
+     color: green;
+}
+
+li:first-child {
+     font-weight: bold;
+}</code></pre>
+               <p>The hover rule changes a link's colour when the pointer is over it. The first-child rule selects an
+                    element when it is the first child of its parent.</p>
+
+               <h3>Pseudo-elements</h3>
+               <p>A pseudo-element styles a specific part of an element or inserts generated content. It commonly uses
+                    two colons.</p>
+               <pre><code>p::first-line {
+     font-weight: bold;
+}
+
+h2::before {
+     content: "★ ";
+     color: green;
+}</code></pre>
+               <p>The first-line example styles the first line of a paragraph. The before example inserts a star before
+                    each h2 heading.</p>
+
+               <h2>6. Cascade, Specificity, and Inheritance</h2>
+
+               <h3>Cascade</h3>
+               <p>The cascade determines which CSS declaration is applied when multiple rules target the same element.
+                    The browser considers factors such as importance, specificity, and source order.</p>
+               <pre><code>p {
+     color: blue;
+}
+
+p {
+     color: green;
+}</code></pre>
+               <p>When these rules have equal priority and specificity, the later rule wins, so the paragraph becomes
+                    green.</p>
+
+               <h3>Specificity</h3>
+               <p>Specificity is the priority given to a selector when competing declarations target the same property.
+                    Generally, an ID selector has higher specificity than a class selector, and a class selector has
+                    higher specificity than an element selector.</p>
+               <pre><code>p {
+     color: blue;
+}
+
+.note {
+     color: orange;
+}
+
+#message {
+     color: green;
+}</code></pre>
+               <pre><code>&lt;p id="message" class="note"&gt;Hello CSS&lt;/p&gt;</code></pre>
+               <p>In this example, the ID selector has the highest specificity among these three rules, so the text
+                    becomes green.</p>
+
+               <h3>Inheritance</h3>
+               <p>Inheritance allows certain CSS properties, such as color and font-family, to pass from a parent
+                    element to its children. Properties such as margin and border generally do not inherit
+                    automatically.</p>
+               <pre><code>body {
+     color: #334155;
+     font-family: Arial, sans-serif;
+}</code></pre>
+               <p>Text inside many child elements inherits the body's text colour and font unless another rule overrides
+                    them.</p>
+
+               <h2>7. Colour, Font, Text, and Background Properties</h2>
+
+               <h3>Colour Properties</h3>
+               <p>The color property changes text colour. Colours can be written using names, hexadecimal values, RGB,
+                    or other supported colour formats.</p>
+               <pre><code>h1 {
+     color: #1f4d3b;
+}
+
+p {
+     color: rgb(80, 90, 100);
+}</code></pre>
+
+               <h3>Font Properties</h3>
+               <p>Font properties control the appearance and size of text.</p>
+               <pre><code>p {
+     font-family: Arial, sans-serif;
+     font-size: 16px;
+     font-weight: 500;
+     font-style: italic;
+}</code></pre>
+
+               <h3>Text Properties</h3>
+               <p>Text properties control alignment, decoration, spacing, and line height.</p>
+               <pre><code>h1 {
+     text-align: center;
+     text-decoration: underline;
+}
+
+p {
+     line-height: 1.8;
+     letter-spacing: 1px;
+}</code></pre>
+
+               <h3>Background Properties</h3>
+               <p>Background properties add colours or images behind elements.</p>
+               <pre><code>.box {
+     background-color: #e8f5ee;
+     background-image: url("background.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
+}</code></pre>
+               <p>Use a background image only when it supports the content and maintains readable text.</p>
+
+               <h2>8. Complete CSS Example</h2>
+               <p>The following example combines selectors, colours, fonts, backgrounds, and hover effects.</p>
+
+               <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;title&gt;CSS Example&lt;/title&gt;
+     &lt;style&gt;
+          body {
+               font-family: Arial, sans-serif;
+               background-color: #f6faf8;
+          }
+
+          .card {
+               background-color: white;
+               color: #1f4d3b;
+               padding: 20px;
+               border-radius: 10px;
+          }
+
+          .card:hover {
+               background-color: #e8f5ee;
+          }
+
+          #title {
+               text-align: center;
+          }
+     &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;h1 id="title"&gt;Learning CSS&lt;/h1&gt;
+
+     &lt;div class="card"&gt;
+          &lt;p&gt;CSS makes web pages attractive.&lt;/p&gt;
+     &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+               <div class="important-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                         <h3>Key Point</h3>
+                         <p>HTML provides structure, while CSS controls presentation. Learn selectors, CSS syntax, the
+                              cascade, and common styling properties before moving to advanced layouts.</p>
+                    </div>
+               </div>
+
+          </article>
+
+          <nav class="lecture-footer">
+               <a href="lecture4.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="lecture6.html">Next Lecture <i class="fa-solid fa-arrow-right"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+
+</html>

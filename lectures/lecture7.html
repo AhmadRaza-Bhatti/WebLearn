@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Lecture 7: CSS Positioning and Stacking | WebLearn</title>
+
+     <link rel="stylesheet" href="lecture1.css">
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css">
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+     <nav class="lecture-nav">
+          <a href="../lectures.html"><i class="fa-solid fa-arrow-left"></i> All Lectures</a>
+          <a href="../index.html"><img src="../images/logo.png" alt="WebLearn Logo"></a>
+     </nav>
+
+     <main class="lecture-container">
+
+          <header class="lecture-header">
+               <div class="lecture-info">
+                    <span>LECTURE 07 • CSS</span>
+                    <h1>CSS Positioning and Stacking</h1>
+                    <p>Learn how elements flow, move, overlap, and use floats in web page layouts.</p>
+               </div>
+               <div class="lecture-icon">
+                    <i class="fa-solid fa-layer-group"></i>
+               </div>
+          </header>
+
+          <section class="video-section">
+               <div class="video-header">
+                    <h2><i class="fa-solid fa-circle-play"></i> Lecture Video</h2>
+                    <span>Lecture 07</span>
+               </div>
+               <video controls>
+                    <source src="../video/lecture7.mp4" type="video/mp4">
+                    Your browser does not support the video element.
+               </video>
+          </section>
+
+          <article class="lecture-content">
+
+               <h2>1. Introduction to CSS Positioning</h2>
+               <p>CSS positioning controls where elements appear on a web page. It can be used to place badges on cards,
+                    keep navigation bars visible, create overlays, and position elements relative to their containers.
+               </p>
+               <p>Before learning positioning, it is important to understand normal document flow. In normal flow, block
+                    elements usually appear one after another vertically, while inline elements appear within lines of
+                    text.</p>
+
+               <div class="learning-cards">
+                    <div class="learning-card">
+                         <i class="fa-solid fa-list"></i>
+                         <h3>Normal Flow</h3>
+                         <p>Elements follow the normal order of the HTML document.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-arrows-up-down-left-right"></i>
+                         <h3>Positioning</h3>
+                         <p>Controls where an element is placed on the page.</p>
+                    </div>
+                    <div class="learning-card">
+                         <i class="fa-solid fa-layer-group"></i>
+                         <h3>Stacking</h3>
+                         <p>Controls which elements appear in front of others.</p>
+                    </div>
+               </div>
+
+               <h2>2. Normal Document Flow</h2>
+               <p>Normal flow is the browser's default layout behaviour. Elements take part in the page layout according
+                    to their type and the rules of their parent container.</p>
+
+               <pre><code>&lt;div&gt;First Box&lt;/div&gt;
+&lt;div&gt;Second Box&lt;/div&gt;
+&lt;p&gt;A paragraph below the boxes.&lt;/p&gt;</code></pre>
+
+               <p>By default, each div is a block element, so the boxes appear on separate lines. Their order follows
+                    the order in the HTML.</p>
+
+               <h2>3. The Five Position Values</h2>
+
+               <h3>Static Positioning</h3>
+               <p>Static is the default value of the position property. The element remains in normal flow, and top,
+                    right, bottom, and left do not reposition it.</p>
+               <pre><code>.box {
+     position: static;
+}</code></pre>
+
+               <h3>Relative Positioning</h3>
+               <p>Relative positioning moves an element from its original position. The element's original space is
+                    still reserved, so other elements do not move into that space.</p>
+               <pre><code>.box {
+     position: relative;
+     top: 15px;
+     left: 20px;
+}</code></pre>
+               <p>The box moves 15 pixels down and 20 pixels to the right from its original position.</p>
+
+               <h3>Absolute Positioning</h3>
+               <p>An absolutely positioned element is removed from normal flow. It is positioned relative to its
+                    containing block, often the padding box of the nearest ancestor whose position is not static.</p>
+               <pre><code>.card {
+     position: relative;
+}
+
+.badge {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+}</code></pre>
+               <p>Here, the card creates a positioning reference for the badge. This pattern is useful for labels such
+                    as New, Featured, or Sale.</p>
+
+               <h3>Fixed Positioning</h3>
+               <p>A fixed element is normally positioned relative to the viewport and remains in the same place when the
+                    page scrolls. Certain ancestor properties can change its containing block.</p>
+               <pre><code>.help-button {
+     position: fixed;
+     right: 20px;
+     bottom: 20px;
+}</code></pre>
+               <p>This is useful for floating help buttons or back-to-top controls.</p>
+
+               <h3>Sticky Positioning</h3>
+               <p>A sticky element stays in normal flow until it reaches a specified offset during scrolling. It then
+                    sticks within the boundaries of its scrolling container.</p>
+               <pre><code>.lecture-heading {
+     position: sticky;
+     top: 0;
+}</code></pre>
+               <p>Sticky positioning usually needs an offset such as top: 0. It can also be affected by the scrolling
+                    container and the space available for the element.</p>
+
+               <h2>4. Offsets: Top, Right, Bottom, and Left</h2>
+               <p>Offset properties control an element's position when the selected positioning method supports them.
+               </p>
+
+               <pre><code>.box {
+     position: absolute;
+     top: 20px;
+     right: 30px;
+}</code></pre>
+
+               <ul>
+                    <li><strong>top:</strong> Sets the distance from the top reference edge.</li>
+                    <li><strong>right:</strong> Sets the distance from the right reference edge.</li>
+                    <li><strong>bottom:</strong> Sets the distance from the bottom reference edge.</li>
+                    <li><strong>left:</strong> Sets the distance from the left reference edge.</li>
+               </ul>
+
+               <p>For example, top: 20px places an absolutely positioned element 20 pixels below its containing block's
+                    top edge when that edge is the relevant reference.</p>
+
+               <h2>5. Understanding the Containing Block</h2>
+               <p>A containing block is the reference area used to calculate an element's position and dimensions. For
+                    many absolutely positioned elements, the nearest positioned ancestor is the containing block.</p>
+
+               <pre><code>&lt;div class="parent"&gt;
+     &lt;div class="child"&gt;Child Box&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+               <pre><code>.parent {
+     position: relative;
+     width: 300px;
+     height: 200px;
+     border: 2px solid green;
+}
+
+.child {
+     position: absolute;
+     top: 10px;
+     right: 10px;
+}</code></pre>
+
+               <p>The child is positioned near the top-right corner of the parent. Without the positioned parent, the
+                    child may use a different containing block.</p>
+
+               <h2>6. Stacking Order and Z-index</h2>
+               <p>When elements overlap, the browser determines which one appears in front. The z-index property can
+                    control stacking order within the applicable stacking context.</p>
+
+               <pre><code>.box-one {
+     position: absolute;
+     top: 20px;
+     left: 20px;
+     z-index: 1;
+}
+
+.box-two {
+     position: absolute;
+     top: 40px;
+     left: 50px;
+     z-index: 2;
+}</code></pre>
+
+               <p>When both elements participate in the same stacking context, box-two will generally appear in front
+                    because its z-index is higher.</p>
+
+               <h3>Stacking Context</h3>
+               <p>A stacking context is a group of elements stacked independently from other groups. Properties such as
+                    a positioned element with an appropriate z-index, opacity below 1, and transforms can create
+                    stacking contexts.</p>
+               <p>A child with a very high z-index cannot always appear above every element on the page. If its parent
+                    stacking context is behind another stacking context, the child remains within that group's stacking
+                    order.</p>
+
+               <h2>7. Floats</h2>
+               <p>The float property moves an element toward the left or right side of its containing block. Text and
+                    inline content can flow around it. Floats were historically used for page layouts, but modern
+                    layouts are usually easier with Flexbox or Grid.</p>
+
+               <pre><code>.photo {
+     float: left;
+     width: 150px;
+     margin-right: 15px;
+}</code></pre>
+
+               <pre><code>&lt;img src="photo.jpg" alt="A sample photo" class="photo"&gt;
+&lt;p&gt;This text flows beside the floated image and continues below it.&lt;/p&gt;</code></pre>
+
+               <h3>Clear Property</h3>
+               <p>The clear property prevents an element from sitting beside floats on the specified side.</p>
+               <pre><code>.next-section {
+     clear: both;
+}</code></pre>
+
+               <ul>
+                    <li><strong>clear: left;</strong> Clears left floats.</li>
+                    <li><strong>clear: right;</strong> Clears right floats.</li>
+                    <li><strong>clear: both;</strong> Clears both left and right floats.</li>
+               </ul>
+
+               <h2>8. The Collapsed Parent Height Problem</h2>
+               <p>When a container contains only floated children, the container may not automatically expand to contain
+                    their height. This can cause the next section to appear in an unexpected position.</p>
+
+               <pre><code>.container {
+     display: flow-root;
+}</code></pre>
+
+               <p>Using display: flow-root creates a new block formatting context and is a simple modern way to contain
+                    floats. Another traditional solution is a clearfix technique.</p>
+
+               <pre><code>.clearfix::after {
+     content: "";
+     display: block;
+     clear: both;
+}</code></pre>
+
+               <h2>9. Complete Positioning Example</h2>
+               <pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+     &lt;meta charset="UTF-8"&gt;
+     &lt;title&gt;Positioning Example&lt;/title&gt;
+     &lt;style&gt;
+          body {
+               font-family: Arial, sans-serif;
+               background: #f6faf8;
+          }
+
+          .card {
+               position: relative;
+               width: 300px;
+               margin: 50px auto;
+               padding: 30px;
+               background: white;
+               border: 1px solid #dcebe3;
+               border-radius: 12px;
+          }
+
+          .badge {
+               position: absolute;
+               top: -12px;
+               right: 15px;
+               padding: 6px 12px;
+               color: white;
+               background: #2e7d5b;
+               border-radius: 6px;
+          }
+
+          .help {
+               position: fixed;
+               right: 15px;
+               bottom: 15px;
+               padding: 12px;
+               background: #1f4d3b;
+               color: white;
+          }
+     &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+     &lt;div class="card"&gt;
+          &lt;span class="badge"&gt;New&lt;/span&gt;
+          &lt;h2&gt;CSS Positioning&lt;/h2&gt;
+          &lt;p&gt;This card demonstrates relative and absolute positioning.&lt;/p&gt;
+     &lt;/div&gt;
+
+     &lt;div class="help"&gt;Help&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+               <div class="important-box">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <div>
+                         <h3>Key Point</h3>
+                         <p>Relative positioning keeps an element's original space, absolute positioning removes it from
+                              normal flow, fixed positioning usually follows the viewport, and sticky positioning sticks
+                              during scrolling. Use z-index to manage overlap within stacking contexts.</p>
+                    </div>
+               </div>
+
+          </article>
+
+          <nav class="lecture-footer">
+               <a href="lecture6.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="lecture8.html">Next Lecture <i class="fa-solid fa-arrow-right"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+
+</html>

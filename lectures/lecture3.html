@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+          integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+          crossorigin="anonymous" referrerpolicy="no-referrer">
+
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+     <link rel="stylesheet" href="lecture.css">
+
+     <title>Lecture 3 - HTML Tables | WebLearn</title>
+</head>
+
+<body>
+
+     <!-- Top Navigation -->
+
+     <nav class="lecture-nav">
+
+          <a href="../lectures.html">
+               <i class="fa-solid fa-arrow-left"></i>
+               All Lectures
+          </a>
+
+          <h2>
+               <a href="../index.html">
+                    <img src="../images/logo.png" alt="WebLearn Logo">
+               </a>
+          </h2>
+
+     </nav>
+
+
+     <main class="lecture-container">
+
+
+          <!-- Lecture Header -->
+
+          <section class="lecture-header">
+
+               <div class="lecture-info">
+
+                    <span>LECTURE 03</span>
+
+                    <h1>HTML Tables</h1>
+
+                    <p>
+                         Learn how to organize and display information
+                         in rows and columns using HTML tables.
+                    </p>
+
+               </div>
+
+               <div class="lecture-icon">
+                    <i class="fa-solid fa-table"></i>
+               </div>
+
+          </section>
+
+
+          <!-- Video -->
+
+          <section class="video-section">
+
+               <div class="video-header">
+                    <h2>Lecture Video</h2>
+
+                    <span>
+                         <i class="fa-solid fa-circle-play"></i>
+                         Watch & Learn
+                    </span>
+               </div>
+
+               <video controls>
+                    <source src="../video/lecture3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+               </video>
+
+          </section>
+
+
+          <!-- Lecture Content -->
+
+          <section class="lecture-content">
+
+               <h2>About This Lecture</h2>
+
+               <p>
+                    HTML tables are used to display structured information
+                    in rows and columns. They are useful for presenting
+                    student records, marksheets, schedules, product
+                    information and other data that needs to be compared.
+               </p>
+
+               <p>
+                    In this lecture, we will learn the basic table elements,
+                    table sections, merged cells, CSS styling, accessibility
+                    and responsive table layouts.
+               </p>
+
+
+               <!-- Learning Cards -->
+
+               <h2>What You'll Learn</h2>
+
+               <div class="learning-cards">
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-table-cells"></i>
+                         <h3>Table Structure</h3>
+                         <p>Understand rows, headings, cells and captions.</p>
+                    </div>
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-object-group"></i>
+                         <h3>Merging Cells</h3>
+                         <p>Combine cells using colspan and rowspan.</p>
+                    </div>
+
+                    <div class="learning-card">
+                         <i class="fa-solid fa-palette"></i>
+                         <h3>CSS and Responsive</h3>
+                         <p>Style tables and make them easier to use.</p>
+                    </div>
+
+               </div>
+
+
+               <!-- Basic Structure -->
+
+               <h2>1. Basic Table Structure</h2>
+
+               <p>
+                    The table element creates a table. The tr element
+                    creates a row, th creates a heading cell, and td
+                    creates a normal data cell.
+               </p>
+
+               <ul>
+                    <li><strong>table:</strong> Defines the complete table.</li>
+                    <li><strong>tr:</strong> Defines a table row.</li>
+                    <li><strong>th:</strong> Defines a heading cell.</li>
+                    <li><strong>td:</strong> Defines a data cell.</li>
+               </ul>
+
+               <h3>Example</h3>
+
+               <pre><code>&lt;table&gt;
+     &lt;tr&gt;
+          &lt;th&gt;Name&lt;/th&gt;
+          &lt;th&gt;Subject&lt;/th&gt;
+          &lt;th&gt;Marks&lt;/th&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;
+          &lt;td&gt;Ahmad&lt;/td&gt;
+          &lt;td&gt;Web Development&lt;/td&gt;
+          &lt;td&gt;85&lt;/td&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;
+          &lt;td&gt;Ali&lt;/td&gt;
+          &lt;td&gt;Programming&lt;/td&gt;
+          &lt;td&gt;90&lt;/td&gt;
+     &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+               <p>
+                    The first row contains the column headings. The next
+                    two rows contain the actual data. Each row should
+                    have the appropriate number of cells for its columns.
+               </p>
+
+
+               <!-- Table Sections -->
+
+               <h2>2. Table Sections</h2>
+
+               <p>
+                    HTML provides elements that divide a table into
+                    meaningful sections. These sections make larger
+                    tables easier to organize and maintain.
+               </p>
+
+               <ul>
+                    <li><strong>caption:</strong> Gives the table a title or description.</li>
+                    <li><strong>thead:</strong> Groups the heading rows.</li>
+                    <li><strong>tbody:</strong> Groups the main data rows.</li>
+                    <li><strong>tfoot:</strong> Groups summary or footer rows.</li>
+               </ul>
+
+               <h3>Example</h3>
+
+               <pre><code>&lt;table&gt;
+     &lt;caption&gt;Student Marks&lt;/caption&gt;
+
+     &lt;thead&gt;
+          &lt;tr&gt;
+               &lt;th&gt;Name&lt;/th&gt;
+               &lt;th&gt;Marks&lt;/th&gt;
+          &lt;/tr&gt;
+     &lt;/thead&gt;
+
+     &lt;tbody&gt;
+          &lt;tr&gt;
+               &lt;td&gt;Ahmad&lt;/td&gt;
+               &lt;td&gt;85&lt;/td&gt;
+          &lt;/tr&gt;
+
+          &lt;tr&gt;
+               &lt;td&gt;Ali&lt;/td&gt;
+               &lt;td&gt;90&lt;/td&gt;
+          &lt;/tr&gt;
+     &lt;/tbody&gt;
+
+     &lt;tfoot&gt;
+          &lt;tr&gt;
+               &lt;th&gt;Total Students&lt;/th&gt;
+               &lt;td&gt;2&lt;/td&gt;
+          &lt;/tr&gt;
+     &lt;/tfoot&gt;
+&lt;/table&gt;</code></pre>
+
+               <p>
+                    These elements describe the purpose of each table
+                    section. They do not automatically provide a complete
+                    visual design; CSS can be used to style them.
+               </p>
+
+
+               <!-- Merging Cells -->
+
+               <h2>3. Merging Table Cells</h2>
+
+               <p>
+                    Sometimes a table needs a cell that covers more than
+                    one column or row. HTML provides two attributes for
+                    this purpose.
+               </p>
+
+               <h3>Colspan</h3>
+
+               <p>
+                    The colspan attribute makes one cell extend across
+                    multiple columns.
+               </p>
+
+               <pre><code>&lt;table&gt;
+     &lt;tr&gt;
+          &lt;th colspan="2"&gt;Student Information&lt;/th&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;
+          &lt;td&gt;Name&lt;/td&gt;
+          &lt;td&gt;Ahmad&lt;/td&gt;
+     &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+               <h3>Rowspan</h3>
+
+               <p>
+                    The rowspan attribute makes one cell extend across
+                    multiple rows.
+               </p>
+
+               <pre><code>&lt;table&gt;
+     &lt;tr&gt;
+          &lt;th rowspan="2"&gt;Web Development&lt;/th&gt;
+          &lt;td&gt;HTML&lt;/td&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;
+          &lt;td&gt;CSS&lt;/td&gt;
+     &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+               <p>
+                    Remember: colspan merges cells horizontally, while
+                    rowspan merges cells vertically. When using either
+                    attribute, adjust the remaining cells so the table
+                    structure stays correct.
+               </p>
+
+
+               <!-- CSS Styling -->
+
+               <h2>4. Styling Tables with CSS</h2>
+
+               <p>
+                    CSS improves the appearance and readability of tables.
+                    Borders separate cells, padding creates space inside
+                    cells, and text-align controls horizontal alignment.
+               </p>
+
+               <h3>Border and Border Collapse</h3>
+
+               <pre><code>table {
+     width: 100%;
+     border-collapse: collapse;
+}
+
+th, td {
+     border: 1px solid #dcebe3;
+     padding: 12px;
+     text-align: left;
+}</code></pre>
+
+               <p>
+                    The border property adds lines around the cells.
+                    The border-collapse property combines neighboring
+                    cell borders into a single border.
+               </p>
+
+               <h3>Striped Rows</h3>
+
+               <p>
+                    The nth-child selector can apply different styles
+                    to alternating rows. This makes larger tables
+                    easier to read.
+               </p>
+
+               <pre><code>tbody tr:nth-child(even) {
+     background-color: #e8f5ee;
+}</code></pre>
+
+               <h3>Hover Effect</h3>
+
+               <p>
+                    The hover pseudo-class changes a row's appearance
+                    when the pointer moves over it.
+               </p>
+
+               <pre><code>tbody tr:hover {
+     background-color: #dcebe3;
+}</code></pre>
+
+
+               <!-- Accessibility -->
+
+               <h2>5. Table Accessibility</h2>
+
+               <p>
+                    Accessible tables help users understand the
+                    relationship between headings and data. Use th
+                    for heading cells and td for ordinary data cells.
+                    The scope attribute identifies whether a heading
+                    applies to a row or a column.
+               </p>
+
+               <pre><code>&lt;table&gt;
+     &lt;tr&gt;
+          &lt;th scope="col"&gt;Name&lt;/th&gt;
+          &lt;th scope="col"&gt;Marks&lt;/th&gt;
+     &lt;/tr&gt;
+
+     &lt;tr&gt;
+          &lt;th scope="row"&gt;Ahmad&lt;/th&gt;
+          &lt;td&gt;85&lt;/td&gt;
+     &lt;/tr&gt;
+&lt;/table&gt;</code></pre>
+
+               <ul>
+                    <li><strong>scope="col":</strong> Connects a heading to its column.</li>
+                    <li><strong>scope="row":</strong> Connects a heading to its row.</li>
+                    <li><strong>caption:</strong> Gives users context about the table's purpose.</li>
+               </ul>
+
+
+               <!-- Responsive Tables -->
+
+               <h2>6. Responsive Tables</h2>
+
+               <p>
+                    Tables with many columns may become wider than a
+                    mobile screen. Instead of forcing the entire page
+                    to become wider, place the table inside a container
+                    that allows horizontal scrolling.
+               </p>
+
+               <pre><code>.table-container {
+     width: 100%;
+     overflow-x: auto;
+}
+
+table {
+     width: 100%;
+     border-collapse: collapse;
+     min-width: 500px;
+}</code></pre>
+
+               <p>
+                    Add the table inside a div with the table-container
+                    class. On narrow screens, users can scroll sideways
+                    to view the remaining columns.
+               </p>
+
+               <pre><code>&lt;div class="table-container"&gt;
+     &lt;table&gt;
+          &lt;tr&gt;
+               &lt;th&gt;Name&lt;/th&gt;
+               &lt;th&gt;Subject&lt;/th&gt;
+               &lt;th&gt;Marks&lt;/th&gt;
+          &lt;/tr&gt;
+          &lt;tr&gt;
+               &lt;td&gt;Ahmad&lt;/td&gt;
+               &lt;td&gt;HTML&lt;/td&gt;
+               &lt;td&gt;85&lt;/td&gt;
+          &lt;/tr&gt;
+     &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+
+               <!-- Important Rule -->
+
+               <div class="important-box">
+
+                    <i class="fa-solid fa-lightbulb"></i>
+
+                    <div>
+                         <h3>Important Rule</h3>
+
+                         <p>
+                              Use HTML tables for displaying structured
+                              data, not for designing the overall layout
+                              of a webpage. Use CSS Flexbox or Grid for
+                              page layouts instead.
+                         </p>
+                    </div>
+
+               </div>
+
+          </section>
+
+
+          <!-- Bottom Navigation -->
+
+          <nav class="lecture-footer">
+               <a href="lecture2.html"><i class="fa-solid fa-arrow-left"></i> Previous Lecture</a>
+               <a href="../lectures.html">All Lectures</a>
+               <a href="lecture4.html">Next Lecture <i class="fa-solid fa-arrow-right"></i></a>
+          </nav>
+
+     </main>
+
+</body>
+
+</html>
